@@ -1,4 +1,4 @@
 # PolygonInflation
 
-![img](img/join_miter.svg)
-<img src="./img/join_miter.svg">
+Inflating polygons using Boost Polygon Buffer
+![img](img/join_miter.png)
