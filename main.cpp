@@ -8,7 +8,7 @@
 #include <chrono>
 
 typedef boost::geometry::model::d2::point_xy<double> point;
-typedef boost::geometry::model::polygon<point> boost_polygon;
+typedef boost::geometry::model::polygon<point, false> boost_polygon;
 
 void print_vertices(const boost_polygon &poly)
 {
@@ -48,11 +48,11 @@ int main()
     boost::geometry::model::multi_polygon<boost_polygon> result;
 
     boost_polygon input;
-    // fill in CLOCKWISE
+    // fill in ANTI-CLOCKWISE
     boost::geometry::append(input.outer(), point(5, 0));
-    boost::geometry::append(input.outer(), point(0, -1));
-    boost::geometry::append(input.outer(), point(-5, 0));
     boost::geometry::append(input.outer(), point(0, 1));
+    boost::geometry::append(input.outer(), point(-5, 0));
+    boost::geometry::append(input.outer(), point(0, -1));
     boost::geometry::append(input.outer(), point(5, 0));
 
     // print_vertices(input);
